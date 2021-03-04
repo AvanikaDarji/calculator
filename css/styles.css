@@ -1,0 +1,153 @@
+:root {
+    --orange-050: #ffe8d9;
+    --orange-100: #ffd0b5;
+    --orange-200: #ffb088;
+    --orange-300: #ff9466;
+    --orange-400: #f9703e;
+    --orange-500: #f35627;
+    --orange-600: #de3a11;
+    --orange-700: #c52707;
+    --orange-800: #ad1d07;
+    --orange-900: #841003;
+    --grey-050: #f5f7fa;
+    --grey-100: #e4e7eb;
+    --grey-200: #cbd2d9;
+    --grey-300: #9aa5b1;
+    --grey-400: #7b8794;
+    --grey-500: #616e7c;
+    --grey-600: #52606d;
+    --grey-700: #3e4c59;
+    --grey-800: #323f4b;
+    --grey-900: #1f2933;
+}
+
+body {
+    background-image: linear-gradient(236deg, #74ebd5, #acb6e5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+html {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+
+/****** Calculator ***/
+
+.calculator {
+    overflow: hidden;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 0.5em;
+}
+
+.calculator__display {
+    background-color: var(--grey-900);
+    width: 13rem;
+    text-align: right;
+    padding: 0.25rem 1rem;
+    color: var(--grey-050);
+    text-align: right;
+    font-size: calc(1rem * 1.2 *1.2);
+}
+
+.calculator__keys>button {
+    border: 0;
+    padding: 0.2em 2em;
+}
+
+[data-key="1"] {
+    grid-area: one;
+}
+
+[data-key="2"] {
+    grid-area: two;
+}
+
+[data-key="3"] {
+    grid-area: three;
+}
+
+[data-key="4"] {
+    grid-area: four;
+}
+
+[data-key="5"] {
+    grid-area: five;
+}
+
+[data-key="6"] {
+    grid-area: six;
+}
+
+[data-key="7"] {
+    grid-area: seven;
+}
+
+[data-key="8"] {
+    grid-area: eight;
+}
+
+[data-key="equal"] {
+    grid-area: equal;
+    background-color: var(--orange-300);
+}
+
+[data-key="equal"]:active {
+    background-color: var(--orange-500);
+}
+
+[data-key="equal"]:hover,
+[data-key="equal"]:focus {
+    background-color: var(--orange-400);
+}
+
+.number:focus,
+.number:hover {
+    background-color: var(--grey-100);
+}
+
+[data-key="9"] {
+    grid-area: nine;
+}
+
+.calculator__keys {
+    display: grid;
+    grid-gap: 2px;
+    grid-template-columns: repeat(4, auto);
+    grid-template-areas: ". . . . " "seven eight nine equal" "four five six equal" "one two three equal" "zeo decimal clear equal";
+}
+
+.plus,
+.minus,
+.times,
+.divide {
+    background-color: var(--grey-400);
+}
+
+.operator:active,
+.operator:hover,
+.number:hover,
+.number:focus {
+    background-color: var(--grey-200);
+}
+
+.operator:active,
+.number:active,
+.clear:active {
+    background: var(--grey-200);
+}
+
+.calculator [data-state="selected"] {
+    background-color: var(--grey-200);
+}
+
+
+/*. calculator__display span {
+    background: #303030;
+    width: 3em;
+    border: 1px solid #303030;
+}*/
